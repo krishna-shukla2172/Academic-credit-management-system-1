@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results of Batch 2023-24</title>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+    <h1>Result of Our Achievers : -</h1>
+    <form id="searchForm">
+        <label for="rollNo">Student Roll.No : -</label>
+        <input type="number" id="rollNo" name="rollNo"  placeholder="YOUR  ROLL.NO : -" required>
+        <button type="submit">Check Status</button> 
+        <p>e.g- Enter Roll.No Between 1000-1016</p>
+    </form>
+    <div id="output"></div>
+    
+</div>
+</section>
+<style>
+  Body {
+     background-color: #f9f;
+
+            color: #333;
+
+            background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+  background-repeat: no-repeat;
+  background-size: 250vh 200vh;
+    color: #0e0e0e;
+    overflow-x: hidden;
+    text-align: centre;
+  }
+    form {
+      max-width: 600px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: hwb(201 77% 0%);
+    
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 2.5);
+    width: calc(50% - 10px);
+    }
+   input {
+    width: calc(50% - 10px);
+    
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #cdeeff;
+    border-radius: 5px;
+    background-color: hwb(195 65% 1%);
+    color: #de0707;
+    font-size: 16px;
+    transition: border-color 0.3s;
+ }
+ h1 {
+    font-size: 22px;
+    line-height: 2;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #e76f51;
+  }
+   label {
+    line-height: 2;
+    font-size: 26px;
+ }
+    input {
+      background-color: hsl(202, 100%, 84%);
+    color: #e76f51;
+    line-height: 1.5;
+    }
+  button {
+    width: 25%;
+    padding: 4px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff7043;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: centre;
+    align-content: centre;
+
+  }
+  #output {
+    font-family: 'Times New Roman', Times, serif;
+        line-height: 1.2;
+        color: #121212;
+        font-size: 19px;
+  }
+  .searchform::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>
+  <script>
+        function alertRedirect() {
+            alert('Redirecting To University Server');
+        }
+        const searchForm = document.getElementById('searchForm');
+        const outputDiv = document.getElementById('output');
+        const students = [
+            { rollNo: 1000, name: "Divyanshu Pradhan", email: "mavenengineer0@gmail.com" ,Subjects: 5, DBMS:   97  ,Renewable:98,AritificialIntelliagence:95,MobileComputing:91,ComputerSecurity:99, Status: "Congraluation! RANK-1",  },
+            { rollNo: 1001, name: "Priyanshu Soni ", email: "priyanshu46@gmail.com" ,Subjects: 5,  DBMS:80 ,Renewable:89,AritificialIntelliagence:86,MobileComputing:56,ComputerSecurity:80 ,Status:"PASS" },
+            { rollNo: 1002, name: "Alisha", email: "alisha33@gmail.com",Subjects: 5 ,  DBMS:88 ,Renewable:96,AritificialIntelliagence:92,MobileComputing:90,ComputerSecurity:89,Status: "PASS"},
+            { rollNo: 1003, name: "Milee Soni", email: "Soni33@gmail.com" ,Subjects: 5,  DBMS:88 ,Renewable:95,AritificialIntelliagence:90,MobileComputing:89,ComputerSecurity:95,Status: "RANK-2"},
+            { rollNo: 1004, name: "Shivanshu Tripathi", email: "Tripathi420@gmail.com" ,Subjects: 5,  DBMS:   10 ,Renewable:50,AritificialIntelliagence:8,MobileComputing:67,ComputerSecurity:81,Status: "PASS"},
+            { rollNo: 1005, name: "Varun Singh", email: "singhvarun658@gmail.com" ,Subjects: 5,  DBMS:  87,Renewable:90,AritificialIntelliagence:88,MobileComputing:75,ComputerSecurity:70 ,Status: "PASS"},
+            { rollNo: 1006, name: "Abhay Kumar Patel", email: "Abhay267@gmail.com" ,Subjects: 5, DBMS:   82 ,Renewable:90,AritificialIntelliagence:91,MobileComputing:83,ComputerSecurity:80,  Status: "PASS"},
+           { rollNo: 1007, name: "Ayush Sahu ", email: "ayush4507@gmail.com" ,Subjects: 5, DBMS:   78 ,Renewable:82,AritificialIntelliagence:95,MobileComputing:91,ComputerSecurity:81, Status: "PASS"}, 
+           { rollNo: 1008, name: "Saurabh", email: "Saurabh7856@gmail.com" ,Subjects: 5, DBMS:   90  ,Renewable:87,AritificialIntelliagence:68,MobileComputing:78,ComputerSecurity:87, Status: "PASS"},
+           { rollNo: 1009, name: "Madhusudan", email: "madhu348@gmail.com" ,Subjects: 5, DBMS:   78  ,Renewable:83,AritificialIntelliagence:85,MobileComputing:91,ComputerSecurity:82, Status: "PASS"},
+           { rollNo: 1010, name: "Sanchit ", email: "karlex3469@gmail.com" ,Subjects: 5, DBMS:   90  ,Renewable:84,AritificialIntelliagence:82,MobileComputing:78,ComputerSecurity:90, Status: "PASS"},
+           { rollNo: 1011, name: "Anil Sonkar", email: "Sonkaranil652@gmail.com" ,Subjects: 5, DBMS:   56  ,Renewable:79,AritificialIntelliagence:95,MobileComputing:91,ComputerSecurity:80, Status: "PASS"},
+           { rollNo: 1012, name: "Saket Singh", email: "Singh4587@gmail.com" ,Subjects: 5, DBMS:   82  ,Renewable:83,AritificialIntelliagence:95,MobileComputing:91,ComputerSecurity:75, Status: "PASS"},
+          { rollNo: 1013, name: "Vaibhav singh", email: "vaib753@gmail.com" ,Subjects: 5,  DBMS:   80,Renewable:81,AritificialIntelliagence:95,MobileComputing:91,ComputerSecurity:76,Status: "PASS "},
+           { rollNo: 1014, name: "Kundan Maurya", email: "kundan650@gmail.com" ,Subjects: 5,  DBMS: 87,Renewable:77,AritificialIntelliagence:70,MobileComputing:90,ComputerSecurity:68,Status: "PASS "},
+          { rollNo: 1016, name: "Krishna Shukla", email: "abhishekshukla420@gmail.com" ,Subjects: 5,  DBMS:  70,Renewable:80,AritificialIntelliagence:72,MobileComputing:23 ,ComputerSecurity:76,Status: "CARRY OVER",  },
+        ];
+
+        function searchStudent(rollNo) {
+            let foundStudent = null;
+
+            for (const student of students) {
+                if (student.rollNo == rollNo) {
+                    foundStudent = student;
+                    break;
+                }
+            }
+
+            return foundStudent;
+        }
+
+        function displayRecord(student) {
+            if (student) {
+                outputDiv.innerHTML += `
+                    <h2>RESULT : -</h2>
+                    <p>Rollno: ${student.rollNo}</p>
+                    <p>Name: ${student.name}</p>
+                    <p>Email: ${student.email}</p>
+                    <p>Subjects: ${student.Subjects}</p>
+                    <p>DBMS: ${student. DBMS}</p>
+                    <p>Renewable: ${student. Renewable}</p>
+                    <p>AritificialIntelliagence: ${student. AritificialIntelliagence}</p>
+                    <p>MobileComputing: ${student. MobileComputing}</p>
+                    <p>ComputerSecurity: ${student. ComputerSecurity}</p>
+                   
+                      <p>Status: ${student.Status}</p> `;
+            } else {
+                outputDiv.innerHTML += '<p>Record not Found. Contact Administrator email at: divyanshupradhan678@gmail.com</p>';
+            }
+        }
+
+        searchForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const rollNo = document.getElementById('rollNo').value;
+            const foundStudent = searchStudent(rollNo);
+
+            setTimeout(alertRedirect, 0); 
+
+            setTimeout(function() {
+                displayRecord(foundStudent);
+            }, 6000);
+        });
+    </script>
+
+  
+
+</body>
+</html>
